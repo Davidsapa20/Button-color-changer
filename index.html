@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Changer</title>
+</head>
+<style>
+    /* css section */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .button-container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 400px;
+        padding: 20px;
+        background-color: brown;
+        border: 2px solid;
+        width: 100px;
+        height: 100px;
+        margin-left: 45%;
+    }
+    
+    #btn {
+        padding: 10px 15px;
+        border-radius: 60px;
+        border-color: black;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <!--Html section -->
+    <div class="button-container">
+        <button id="btn">
+            Change the color
+        </button>
+    </div>
+    <script>
+        //javascript section
+        let btn = document.getElementById("btn");
+        const color = ["A", "B", "C", "D", "E", "F", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+        btn.addEventListener('click', () => {
+            let randomColor = "#";
+            for (let i = 0; i < 6; i++) {
+                randomColor += color[Math.floor(Math.random() * color.length)]
+            };
+            document.body.style.backgroundColor = randomColor;
+        })
+    </script>
+</body>
+
+</html>
